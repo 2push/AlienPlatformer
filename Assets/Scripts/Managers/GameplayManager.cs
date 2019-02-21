@@ -38,7 +38,7 @@ public class GameplayManager : MonoBehaviour
         player.enabled = false;
         finishScreen.SetActive(false);
         Time.timeScale = 0;
-        starterUI.ShowText();
+        //StarterUIController shows messages here
     }
 
     public void Begin()

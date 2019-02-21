@@ -23,19 +23,24 @@ public class StarterUIController : MonoBehaviour
         textParts.Enqueue(starterQuote3);
     }
 
+    private void Start()
+    {
+        ShowIntroText();
+    }
+
     private void Update()
-    {       
-        if (Input.anyKeyDown)
+    {
+        if (Input.anyKeyDown || Input.touchCount > 0)
         {
             if (textParts.Count > 0)
-                textComponent.text = textParts.Dequeue();
+                ShowIntroText();
             else
                 GameplayManager.instance.Begin();
         }
     }
 
-    public void ShowText()
+    private void ShowIntroText()
     {
         textComponent.text = textParts.Dequeue();
-    } 
+    }
 }
